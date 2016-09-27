@@ -37,15 +37,6 @@
 		},
 		"subscriptionId": {
 			"value": "changeme"
-		},
-		"keyVaultResourceGroup": {
-			"value": "changeme"
-		},
-		"keyVaultName": {
-			"value": "changeme"
-		},
-		"keyVaultSecret": {
-			"value": "changeme"
 		}
 	}
 }

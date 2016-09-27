@@ -8,7 +8,7 @@
 				"description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated.",
 				"artifactsBaseUrl": ""
 			},
-			"defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/openshift-origin-rhel/"
+			"defaultValue": "https://raw.githubusercontent.com/jam13/azure-quickstart-templates/feature/central-ansible/openshift-origin-rhel/"
 		},
 		"masterVmSize": {
 			"type": "string",
@@ -149,9 +149,7 @@
 		"imageReference": "[variables(parameters('osImage'))]",
 		"sshKeyPath": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]",
 		"nodePrepScriptUrl": "[concat(parameters('_artifactsLocation'), 'scripts/nodePrep.sh')]",
-		"masterPrepScriptUrl": "[concat(parameters('_artifactsLocation'), 'scripts/masterPrep.sh')]",
 		"nodePrepScriptFileName": "nodePrep.sh",
-		"masterPrepScriptFileName": "masterPrep.sh",
 		"vmSizesMap": {
 			"Standard_A4": {
 				"storageAccountType": "Standard_LRS"
@@ -572,9 +570,9 @@
 				"autoUpgradeMinorVersion": true,
 				"settings": {
 					"fileUris": [
-						"[variables('masterPrepScriptUrl')]"
+						"[variables('nodePrepScriptUrl')]"
 					],
-					"commandToExecute": "[concat('sh ', variables('masterPrepScriptFileName'), ' ', parameters('adminUsername'))]"
+					"commandToExecute": "[concat('sh ', variables('nodePrepScriptFileName'), ' ', parameters('adminUsername'))]"
 				}
 			}
 		}, {
