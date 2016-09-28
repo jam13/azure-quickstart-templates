@@ -25,3 +25,7 @@ docker-storage-setup
 systemctl enable docker
 systemctl start docker
 
+# Allow sudo without tty
+echo 'Defaults:centos !requiretty' > /etc/sudoers.d/99-centos-cloud-init-requiretty
+chmod 440 /etc/sudoers.d/99-centos-cloud-init-requiretty
+
