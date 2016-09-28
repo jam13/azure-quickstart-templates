@@ -27,10 +27,7 @@
 			"value": 1
 		},
 		"adminUsername": {
-			"value": "changeme"
-		},
-		"adminPassword": {
-			"value": "changeme"
+			"value": "centos"
 		},
 		"sshPublicKey": {
 			"value": "GEN-SSH-PUB-KEY"
